@@ -82,7 +82,9 @@ extension CapturePhotoViewModel {
             guard
                 await requestCameraPermissionUseCase.invoke()
             else {
-                isPermissionDeniedPresented = true
+                DispatchQueue.main.async {
+                    self.isPermissionDeniedPresented = true
+                }
                 return
             }
             

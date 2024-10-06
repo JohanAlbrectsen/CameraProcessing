@@ -25,7 +25,7 @@ extension CapturePhotoView {
                 captureButton
             }
             .navigationDestination(isPresented: $viewModel.isPhotoDetailsPresented) {
-                Text("Successfully captured image")
+                ViewImageView(image: viewModel.capturedPhoto)
             }
             .navigationDestination(isPresented: $viewModel.isPermissionDeniedPresented) {
                 Text("Permissions missing")
